@@ -1,4 +1,23 @@
+.card-Container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Adiciona uma barra de rolagem horizontal */
+  white-space: nowrap; /* Evita que os elementos quebrem para a próxima linha */
+}
+.card-Container::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+.card-Container::-webkit-scrollbar-thumb {
+  background-color: #333; /* Cor do polegar da barra de rolagem */
+  border-radius: 5px; /* Raio de borda do polegar */
+}
+
+.card-Container::-webkit-scrollbar-track {
+  background-color: #a3a3a3; /* Cor da trilha da barra de rolagem */
+}
 .card-paciente {
+  
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;

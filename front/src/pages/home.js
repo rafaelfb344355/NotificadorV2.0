@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CardPaciente from '../components/cardPaciente';
+import '../components/css/CardPaciente.css'
 
 
 class Home extends Component {
@@ -12,10 +13,10 @@ class Home extends Component {
 
   componentDidMount() {
     // Faz uma solicitação à API
-    fetch('http://localhost:8000/paciente/') // Verifique a URL da sua API
+    fetch('http://localhost:8000/paciente/') 
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ pacientes: data.pacientes }); // Atualiza o estado com os dados da API
+        this.setState({ pacientes: data.pacientes }); 
       })
       .catch((error) => {
         console.error('Erro ao buscar dados da API:', error);
@@ -24,10 +25,11 @@ class Home extends Component {
 
   render() {
     const { pacientes } = this.state;
-
+  
     return (
       <div className="home">
         <h1>Lista de Pacientes</h1>
+        <div className='card-Container'>
         {pacientes.map((paciente, index) => (
           <CardPaciente
             key={index}
@@ -35,6 +37,7 @@ class Home extends Component {
             idade={paciente.Data_nascimento}
           />
         ))}
+      </div>
       </div>
     );
   }
